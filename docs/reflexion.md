@@ -1,5 +1,10 @@
 # Reflexion Arquitectonica 
-
+## Nombres 
+Danna Catalina Jimenez Rodriguez  
+Michelle Valentina Martinez Marquez  
+Anderson Philiph Martinez Muñoz  
+Maria Camila Salcedo Matiz  
+Joseph Santiao Toloza Olarte 
 ## 1. Modularidad
 
 El módulo de Monitoreo de Signos Vitales puede separarse relativamente fácil del resto del sistema porque su tabla (signos_vitales) está diseñada de forma independiente y solo se relaciona con la tabla de pacientes a través del identificador del paciente (id_paciente).
