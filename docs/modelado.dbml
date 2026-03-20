@@ -1,0 +1,46 @@
+
+Table pacientes {
+  id_paciente serial
+  cedula varchar [unique]
+  nombre_completo varchar
+  fecha_nacimiento date
+  tipo_sangre varchar
+  
+}
+
+Table personal_medico {
+  id_medico serial
+  tarjeta_profesional varchar [unique]
+  nombre varchar
+  especialidad varchar
+}
+
+
+Table citas_medicas {
+  id_cita serial
+  id_paciente int
+  id_medico int
+  fecha_hora timestamp
+  motivo_consulta text
+}
+
+Table historias_clinicas {
+  id_historia serial
+  id_cita int
+  diagnostico text
+  tratamiento text
+}
+
+Table monitoreo_signos {
+  id_lectura serial
+  id_paciente int
+  frecuencia_cardiaca int
+  temperatura decimal
+  fecha_hora timestamp
+}
+
+
+Ref: citas_medicas.id_paciente > pacientes.id_paciente
+Ref: citas_medicas.id_medico > personal_medico.id_medico
+Ref: historias_clinicas.id_cita - citas_medicas.id_cita
+Ref: monitoreo_signos.id_paciente > pacientes.id_paciente
